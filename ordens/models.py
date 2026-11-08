@@ -33,7 +33,7 @@ class OrdemServico(models.Model):
         AGUARDANDO_PECA = "aguardando_peca", "Aguardando peça"
         CONCLUIDA = "concluida", "Concluída"
         ENTREGUE = "entregue", "Entregue"
-    
+
 
     equipamento = models.ForeignKey(
         Equipamento,
@@ -61,6 +61,8 @@ class OrdemServico(models.Model):
 
     class Meta:
         ordering = ["-data_entrada"]
+        verbose_name = "ordem de serviço"
+        verbose_name_plural = "ordens de serviço"
 
     def __str__(self):
         return f"OS #{self.pk} - {self.equipamento}"
