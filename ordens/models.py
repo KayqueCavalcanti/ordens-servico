@@ -56,7 +56,7 @@ class OrdemServico(models.Model):
         default=Status.ABERTA,
     )
 
-    data_entrada = models.DateTimeField(auto_now=True)
+    data_entrada = models.DateTimeField(auto_now_add=True)
     data_saida = models.DateTimeField(null=True, blank=True)
 
     class Meta:
