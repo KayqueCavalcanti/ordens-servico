@@ -16,6 +16,6 @@ class EquipamentoAdmin(admin.ModelAdmin):
 @admin.register(OrdemServico)
 class OrdemServicoAdmin(admin.ModelAdmin):
     list_display = ["id", "equipamento", "status", "valor_orcamento", "data_entrada"]
-    search_fields = ["defeito_relatado", "equipamento__cliente_nome"]
+    search_fields = ["defeito_relatado", "equipamento__cliente__nome"]
     list_filter = ["status", "data_entrada"]
 
