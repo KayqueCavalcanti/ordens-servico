@@ -11,7 +11,10 @@
 
     <ul>
         {% for cliente in clientes %}
-        <li>{{ cliente.nome }} — {{ cliente.telefone }}</li>
+        <li>
+            <a href="{% url 'ordens:cliente_detalhe' cliente.pk %}">{{ cliente.nome }}</a>
+            — {{ cliente.telefone }}
+        </li>
         {% empty %}
         <li>Nenhum cliente cadastrado.</li>
         {% endfor %}

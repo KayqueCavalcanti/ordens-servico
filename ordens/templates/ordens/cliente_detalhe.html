@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ cliente.nome }}</title>
+</head>
+
+<body>
+    <a href="{% url 'ordens:cliente_lista' %}">← Voltar para clientes</a>
+
+    <h1>{{ cliente.nome }}</h1>
+    <p>Telefone: {{ cliente.telefone }}</p>
+    <p>E-mail: {{ cliente.email|default:"não informado" }}</p>
+    <p>Cliente desde: {{ cliente.criado_em|date:"d/m/Y" }}</p>
+
+    <h2>Equipamentos</h2>
+    <ul>
+        {% for equipamento in cliente.equipamentos.all %}
+            <li>{{ equipamento.tipo }} {{ equipamento.marca }} {{ equipamento.modelo }}</li>
+        {% empty %}
+            <li>Nenhum equipamento cadastrado.</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
