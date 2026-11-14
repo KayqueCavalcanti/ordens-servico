@@ -8,7 +8,7 @@
 
 <body>
     <h1>Clientes</h1>
-
+    <p><a href="{% url 'ordens:cliente_novo' %}">+ Novo cliente</a></p>
     <ul>
         {% for cliente in clientes %}
         <li>
